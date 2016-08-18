@@ -1,0 +1,22 @@
+<div class="container companybox news-list">
+	<ul class="listbox" lazy> <!--   | filter:chose | orderBy:order -->
+		<li bindonce ng-repeat="con in list | limitTo:pageCount" class="row listone">
+			<div class="imgbox col-sm-4">
+				<a ui-sref="dec({id:con.id})" title="">
+					<img src="" alt="" title="" data-ui-lazyload="{{con.imageUrl}}" watch="watch" repeat-end="selectLast()">
+				</a>
+			</div>
+			<div class="textbox col-sm-6">
+				<h2><a ui-sref="dec({id:con.id})" title="">{{con.name}}</a></h2>
+				<p><a ui-sref="dec({id:con.id})" title="">{{con.snippet}}</a></p>
+				<div class="pressbox">
+					<div class="now" ui-proload="{{con.progress}}">
+						<p>0%</p>
+						<div class="now-point"></div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<p ng-show="lazyload">没有内容了。。。。。</p>
+</div>
